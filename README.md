@@ -33,60 +33,6 @@ This repository contains the implementation of the IMDEDU system, including back
 └── assets/                # Example images and visualization outputs
 
 
-🛠️ Installation
-Prerequisites
-Python 3.8+ installed on your system.
-Pip package manager.
-Steps
-Clone the Repository
-bash
-Copy
-1
-2
-git clone https://github.com/yourusername/Image-Duplicate-Detector.git
-cd Image-Duplicate-Detector
-Install Dependencies
-bash
-Copy
-1
-pip install -r requirements.txt
-Run the Application
-To process images via the command line:
-bash
-Copy
-1
-python main.py
-To use the interactive GUI:
-bash
-Copy
-1
-streamlit run app.py
-🎥 How It Works
-Step 1: Load Images
-Provide a directory path containing your images. The system will load all supported formats (PNG, JPG, JPEG, GIF, BMP) and verify their integrity.
-
-Step 2: Compute Hashes
-Cryptographic Hashes (SHA-256) : Generate unique identifiers for each image.
-Perceptual Hashes (aHash) : Capture the visual essence of images for similarity detection.
-Step 3: Store Metadata
-All image metadata, including hashes, dimensions, file paths, and creation dates, are stored in an SQLite database for efficient querying.
-
-Step 4: Detect Similarities
-Compute pairwise Hamming distances between perceptual hashes to identify duplicates and near-duplicates. A triangular heatmap visualizes these similarities.
-
-Step 5: Rank by Resolution
-Higher-resolution images are prioritized within clusters of similar images, ensuring the best-quality versions are retained.
-
-📊 Example Outputs
-1. Similarity Heatmap
-A triangular heatmap displays pairwise Hamming distances between images, highlighting visually similar pairs.
-
-
-
-2. GUI Interface
-The Streamlit GUI allows users to upload images, adjust similarity thresholds, and view results interactively.
-
-
 
 📈 Performance Metrics
 Cryptographic Hash Time
